@@ -1,0 +1,38 @@
+[csv]
+path = "output\\user_data.csv"
+
+[database]
+path = "output\\database.db"
+user_table_name = "user_data"
+
+[database.sql]
+create_table_path = "scripts\\database\\sql_queries\\create_user_table.sql"
+delete_table_path = "scripts\\database\\sql_queries\\delete_existing_table.sql"
+insert_user_data_path = "scripts\\database\\sql_queries\\insert_user_data.sql"
+
+[api]
+base_url = "https://dummyjson.com/"
+
+[api.endpoints]
+basket = "carts/user/"
+products = "products"
+users = "users"
+
+[api.returned_fields]
+products = "id,title,category"
+users = "firstName,lastName,age,gender,height,weight,address"
+
+[json]
+path = "output\\product_data.json"
+
+[output]
+path = "output"
+
+[request]
+retry_codes = [
+    "TOO_MANY_REQUESTS",
+    "INTERNAL_SERVER_ERROR",
+    "BAD_GATEWAY",
+    "SERVICE_UNAVAILABLE",
+    "GATEWAY_TIMEOUT"
+]
